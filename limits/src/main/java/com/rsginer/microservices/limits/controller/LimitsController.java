@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class LimitsController {
 
     @Autowired
-    private Configuration configuration;
+    private Configuration config;
 
     @GetMapping("/limits")
     public Limits retrieveLimits() {
-        return new Limits(configuration.getMinimum(), configuration.getMaximum());
+        return new Limits(config.getMinimum(), config.getMaximum());
     }
 
 }
